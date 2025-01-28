@@ -1,6 +1,6 @@
 <div class="w-full h-screen overflow-hidden">
   <div *ngFor="let slide of slides; let i = index" >
-    <div *ngIf="slide.key == currentSlide" class="relative w-full">
+    <ng-container *ngIf="slide.key == currentSlide" class="relative w-full">
       <div class="hero min-h-screen" style="background-image: url({{slide.imgPath}});"> 
       <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-neutral-content text-center">
@@ -13,9 +13,9 @@
         </div>
       </div>
       <div [class]="'absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform' + (i == 0 ? ' justify-end' : '') + (i == slides.length - 1 ? ' justify-start' : '') + (i > 0 && i < slides.length - 1 ? ' justify-between' : '')">
-        <button *ngIf="i > 0" class="btn btn-circle" (click)="onClickSlide(slide.key)">❮</button>
-        <button *ngIf="i < slides.length - 1" class="btn btn-circle" (click)="onClickSlide(slide.key)">❯</button>
+        <button type="button" *ngIf="i > 0" class="btn btn-circle" (click)="onClickSlide(slides[i - 1] ? slides[i - 1].key : 'slide1')">❮</button>
+        <button type="button" *ngIf="i < slides.length - 1" class="btn btn-circle" (click)="onClickSlide(slides[i + 1] ? slides[i + 1].key : 'slide1')">❯</button>
       </div>
-  </div>
+    </ng-container>
   </div>
 </div>

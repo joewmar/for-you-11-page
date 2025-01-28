@@ -170,5 +170,6 @@ export class MessageComponent {
   }
   public onClickSlide(key: string): void {
     this.currentSlide = key;
+    console.log(this.currentSlide);
   }
 }
