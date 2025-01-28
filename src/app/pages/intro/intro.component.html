@@ -1,0 +1,33 @@
+<div class="hero bg-base-200 min-h-screen">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="text-center lg:text-left">
+        <h1 class="text-5xl font-bold">Welcome to our app!</h1>
+        <p class="py-6">
+          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+          quasi. In deleniti eaque aut repudiandae et a id nisi.
+        </p>
+      </div>
+      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <form [formGroup]="formData" class="card-body">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Name want to call you</span>
+            </label>
+            <input type="text" formControlName="name" class="input input-bordered" required />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input type="password" formControlName="password" class="input input-bordered" required />
+            <label class="label">
+              <a href="#" class="label-text-alt link link-hover"><strong>Hint:</strong> Passcode on your phone</a>
+            </label>
+          </div>
+          <div class="form-control mt-6">
+            <button (click)="onSubmit()" class="btn btn-primary">Go</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
